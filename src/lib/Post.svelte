@@ -111,7 +111,7 @@
 	})
 </script>
 
-<div class="card bg-black rounded-2xl my-5 w-120 max-w-sm p-6 border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700">
+<div class="card dark:bg-black bg-gray-300 rounded-2xl my-5 w-120 max-w-sm p-6 border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700">
 	<div class="card-header border-0 d-flex align-items-center">
 		<a href="/user?id={user_id}">
 			<img width="60" alt="Avatar" class="mb-7 inline rounded-full" src={user_img}>

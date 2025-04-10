@@ -25,10 +25,10 @@
 
 <li class="ml-2 my-5">
 	<a href={link}>
-		<button class="w-60">
+		<button class="bg-gray-600  w-60 	dark:bg-gray-800  text-left text-2xl dark:text-white text-black">
 			<div class="flex">
 				<img width="40" alt="Avatar" class="inline rounded-full" src={user_image_url}/>
-				<p class="ml-3 inline text-left text-2xl text-white">
+				<p class="ml-3 inline text-left text-2xl">
 					{ user_name }
 				</p>
 			</div>
