@@ -4,6 +4,9 @@
 	function signInWithGithub() {
 		supabase.auth.signInWithOAuth({
 			provider: 'github',
+			options: {
+				redirectTo: `https://finch-pearl.vercel.app/`,
+			},
 		}).then(({ data, error }) => {
 			if (error) console.error(error);
 			else console.log(data);
@@ -13,6 +16,9 @@
 	function signInWithGoogle() {
 		supabase.auth.signInWithOAuth({
 			provider: 'google',
+			options: {
+				redirectTo: `https://finch-pearl.vercel.app/`,
+			},
 		}).then(({ data, error }) => {
 			if (error) console.error(error);
 			else console.log(data);
