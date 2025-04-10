@@ -16,7 +16,8 @@
 	"dependencies": {
 		"@supabase/supabase-js": "^2.49.4",
 		"@sveltejs/adapter-static": "^3.0.8",
-		"dicebear": "^9.2.2"
+		"dicebear": "^9.2.2",
+		"unique-username-generator": "^1.4.0"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
