@@ -5,7 +5,7 @@
 		supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
-				redirectTo: `https://finch-pearl.vercel.app/authcallback`,
+				redirectTo: `https://applepiecodes.github.io/finch/authcallback`,
 			},
 		}).then(({ data, error }) => {
 			if (error) console.error(error);
@@ -17,7 +17,7 @@
 		supabase.auth.signInWithOAuth({
 			provider: 'google',
 			options: {
-				redirectTo: `https://finch-pearl.vercel.app/authcallback`,
+				redirectTo: `https://applepiecodes.github.io/finch/authcallback`,
 			},
 		}).then(({ data, error }) => {
 			if (error) console.error(error);
