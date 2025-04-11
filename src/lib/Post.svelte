@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getLoggedInUserId, getUserDisplayName, getUserImageUrl, getUsername, supabase } from '$lib/index';
 	import { onMount } from 'svelte';
+	import {base} from '$app/paths';
 
 	let {post_id} = $props();
 	let user_id = $state("");
@@ -113,10 +114,10 @@
 
 <div class="card dark:bg-black bg-gray-300 rounded-2xl my-5 w-120 max-w-sm p-6 border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700">
 	<div class="card-header border-0 d-flex align-items-center">
-		<a href="/user?id={user_id}">
+		<a href="{base}/user?id={user_id}">
 			<img width="60" alt="Avatar" class="mb-7 inline rounded-full" src={user_img}>
 		</a>
-		<a href="/user?id={user_id}">
+		<a href="{base}/user?id={user_id}">
 			<div style="margin-left: 10px;" class="mt-5 text-white inline-block">
 				<h3>{user_display_name}</h3>
 				<h4>{username}</h4>

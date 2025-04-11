@@ -12,7 +12,7 @@
 			return "/login";
 		}
 		else {
-			return "/user?id=" + user_id;
+			return "/finch/user?id=" + user_id;
 		}
 	}
 
