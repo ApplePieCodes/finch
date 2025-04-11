@@ -13,6 +13,18 @@
 		});
 	}
 
+	function signUpWithSpotify() {
+		supabase.auth.signInWithOAuth({
+			provider: 'spotify',
+			options: {
+				redirectTo: `https://applepiecodes.github.io/finch/authcallback`,
+			},
+		}).then(({ data, error }) => {
+			if (error) console.error(error);
+			else console.log(data);
+		});
+	}
+
 	function signUpWithGoogle() {
 		supabase.auth.signInWithOAuth({
 			provider: 'google',
@@ -33,6 +45,12 @@
 		class="px-6 py-3 bg-white text-white rounded-xl transition duration-200 shadow-lg"
 	>
 		Sign Up With GitHub
+	</button>
+	<button
+		on:click={signUpWithSpotify}
+		class="px-6 py-3 bg-white text-white rounded-xl transition duration-200 shadow-lg"
+	>
+		Sign Up With Spotify
 	</button>
 	<button
 		on:click={signUpWithGoogle}
