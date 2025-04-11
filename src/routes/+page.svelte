@@ -28,7 +28,7 @@
 <div class="card">
 	<Sidebar/>
 </div>
-<div class="md:ml-129 lg:ml-129 sm:mt-10 flex flex-col justify-center items-center h-screen overflow-y-auto no-scrollbar">
+<div class="md:ml-129 lg:ml-129 sm:mt-10 flex flex-col justify-center items-center min-h-screen overflow-y-auto no-scrollbar">
 	{#each posts as post (post)}
 		<Post post_id={post}/>
 	{/each}
