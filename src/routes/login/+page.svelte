@@ -1,5 +1,6 @@
 <script>
 	import { supabase } from '$lib';
+	import {base} from "$app/paths"
 
 	function signInWithGithub() {
 		supabase.auth.signInWithOAuth({
@@ -41,7 +42,7 @@
 		Sign In With Google
 	</button>
 	<p>Don't have an account?</p>
-	<a href="/signup">
+	<a href="{base}/signup">
 		<button
 			class="px-6 py-3 bg-white text-white rounded-xl transition duration-200 shadow-lg"
 		>
