@@ -10,7 +10,7 @@
 	let dialog_open = $state(false);
 
 	async function fetchPosts() {
-		let { data } = await supabase.from('posts').select('id').order('posted').limit(20);
+		let { data } = await supabase.from('posts').select('id').order('popularity').limit(20);
 
 		if (data == null) {
 			posts = [];
