@@ -6,7 +6,7 @@
 	let content = $state();
 
 	async function submit() {
-		await supabase.from('posts').insert({popularity: 0, content: content, poster: await getLoggedInUserId(), votes: []});
+		await supabase.from('posts').insert({popularity: 0, content: content, poster: await getLoggedInUserId()});
 		content = '';
 		open = false;
 	}
