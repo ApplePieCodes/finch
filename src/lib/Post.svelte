@@ -56,10 +56,10 @@
 		}
 
 		for (var datum of data) {
-			if (datum.vote == "based") {
+			if (datum.vote == "upvote") {
 				votes += 1;
 			}
-			else if (datum.vote == "cringe") {
+			else if (datum.vote == "downvote") {
 				votes -= 1;
 			}
 		}
