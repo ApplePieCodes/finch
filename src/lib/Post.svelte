@@ -67,34 +67,34 @@
 		return votes;
 	}
 
-	async function based(): Promise<void> {
+	async function upvote(): Promise<void> {
 		let user = await getLoggedInUserId();
 		if (user_vote == "none") {
-			let {data, error} = await supabase.from("votes").insert({ vote: "based", post: post_id, user_id: user });
-			user_vote = "based";
+			let {data, error} = await supabase.from("votes").insert({ vote: "upvote", post: post_id, user_id: user });
+			user_vote = "upvote";
 		}
-		else if (user_vote == "cringe") {
-			let {data} = await supabase.from("votes").update({ vote: "based" }).eq("post", post_id).eq("user_id", user).select();
-			user_vote = "based";
+		else if (user_vote == "downvote") {
+			let {data} = await supabase.from("votes").update({ vote: "upvote" }).eq("post", post_id).eq("user_id", user).select();
+			user_vote = "upvote";
 		}
-		else if (user_vote == "based") {
+		else if (user_vote == "upvote") {
 			let {data} = await supabase.from("votes").delete().eq("user_id", user).eq("post", post_id);
 			user_vote = "none";
 		}
 		page_votes = await getVotes();
 	}
 
-	async function cringe(): Promise<void> {
+	async function downvote(): Promise<void> {
 		let user = await getLoggedInUserId();
 		if (user_vote == "none") {
-			let {data, error} = await supabase.from("votes").insert({ vote: "cringe", post: post_id, user_id: user });
-			user_vote = "cringe";
+			let {data, error} = await supabase.from("votes").insert({ vote: "downvote", post: post_id, user_id: user });
+			user_vote = "downvote";
 		}
-		else if (user_vote == "based") {
-			let {data} = await supabase.from("votes").update({ vote: "cringe" }).eq("post", post_id).eq("user_id", user).select();
-			user_vote = "cringe";
+		else if (user_vote == "upvote") {
+			let {data} = await supabase.from("votes").update({ vote: "downvote" }).eq("post", post_id).eq("user_id", user).select();
+			user_vote = "downvote";
 		}
-		else if (user_vote == "cringe") {
+		else if (user_vote == "downvote") {
 			let {data} = await supabase.from("votes").delete().eq("user_id", user).eq("post", post_id);
 			user_vote = "none";
 		}
@@ -130,8 +130,8 @@
 	</div>
 
 	<div class="card-footer border-0 d-flex align-items-center">
-		<button class="inline" onclick={based}>Based</button>
+		<button class="inline" onclick={upvote}>Upvote</button>
 		<p class="inline">{page_votes}</p>
-		<button class="inline" onclick={cringe}>Cringe</button>
+		<button class="inline" onclick={downvote}>Downvote</button>
 	</div>
 </div>
